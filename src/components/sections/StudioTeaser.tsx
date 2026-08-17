@@ -40,7 +40,7 @@ export function StudioTeaser() {
               </p>
               <a
                 href="/studio"
-                className="mt-8 inline-flex items-center gap-2 text-sm text-ink transition-colors hover:text-accent"
+                className="mt-8 inline-flex items-center gap-2 text-base text-ink transition-colors hover:text-accent"
               >
                 More about the studio <span>→</span>
               </a>
@@ -56,7 +56,7 @@ export function StudioTeaser() {
                   {upcomingProjects.map((p) => (
                     <li key={p.title} className="py-4 first:pt-0 last:pb-0">
                       <p className="font-display text-xl text-ink">{p.title}</p>
-                      <p className="mt-1 text-sm text-muted">{p.note}</p>
+                      <p className="mt-1 text-base text-muted">{p.note}</p>
                     </li>
                   ))}
                 </ul>

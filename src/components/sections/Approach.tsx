@@ -38,7 +38,7 @@ export function Approach() {
           {steps.map((step, i) => (
             <Reveal key={step.id} delay={i * 0.08}>
               <div className="border-t border-ink/80 pt-6">
-                <span className="font-mono text-sm text-accent">{step.id}</span>
+                <span className="font-mono text-base text-accent">{step.id}</span>
                 <h3 className="mt-4 font-display text-2xl text-ink">
                   {step.title}
                 </h3>

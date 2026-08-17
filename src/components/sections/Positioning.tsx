@@ -24,7 +24,7 @@ export function Positioning() {
                 {site.bio.highlights.map((h) => (
                   <li
                     key={h}
-                    className="flex items-center gap-2 text-sm text-body"
+                    className="flex items-center gap-2 text-base text-body"
                   >
                     <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                     {h}

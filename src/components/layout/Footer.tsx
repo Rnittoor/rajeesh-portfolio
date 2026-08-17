@@ -4,7 +4,7 @@ export function Footer() {
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-hairline bg-canvas">
-      <div className="container-content flex flex-col gap-6 py-10 text-sm text-muted md:flex-row md:items-center md:justify-between">
+      <div className="container-content flex flex-col gap-6 py-10 text-base text-muted md:flex-row md:items-center md:justify-between">
         <p>
           © {year} {site.fullName} · Registered in the Netherlands
         </p>

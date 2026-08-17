@@ -18,7 +18,7 @@ export function SelectedWork() {
             </div>
             <a
               href="/work"
-              className="inline-flex items-center gap-2 text-sm text-body transition-colors hover:text-accent"
+              className="inline-flex items-center gap-2 text-base text-body transition-colors hover:text-accent"
             >
               View all projects <span>→</span>
             </a>

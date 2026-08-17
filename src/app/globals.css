@@ -39,6 +39,10 @@
   --color-accent-hover: #1f37b0;
   --color-accent-soft: #eaefff;
 
+  /* Base reading size = the type floor (17px). text-base resolves to this. */
+  --text-base: 1.0625rem;
+  --text-base--line-height: 1.6;
+
   /* Editorial type scale (fluid) */
   --text-display: clamp(3rem, 8vw, 8.5rem);
   --text-display--line-height: 0.98;
@@ -83,13 +87,14 @@ body {
 /*
   TYPE GUARDRAIL
   --------------
-  Minimum font size on this site is 0.875rem (14px). Nothing goes below it.
-  - Labels / eyebrows / meta / tags: 14px  (.text-label / .eyebrow)
-  - Body / UI default:               16–17px
-  - Do NOT use Tailwind's text-sm (12px) anywhere.
+  Minimum font size on this site is 1.0625rem (17px). Nothing goes below it.
+  - Labels / eyebrows / meta / tags: 17px  (.text-label / .eyebrow / text-base)
+  - Body / UI default:               17px+
+  - Do NOT use Tailwind's text-xs (12px) or text-sm (14px) anywhere.
+    text-base is redefined to 17px, so it is the smallest allowed step.
 */
 .text-label {
-  font-size: 0.875rem; /* 14px — the floor */
+  font-size: 1.0625rem; /* 17px — the floor */
   line-height: 1.4;
 }
 
@@ -102,7 +107,7 @@ body {
 /* Small caps mono eyebrow labels — the "considered studio" detail */
 .eyebrow {
   font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: 0.875rem; /* 14px — respects the guardrail */
+  font-size: 1.0625rem; /* 17px — respects the guardrail */
   letter-spacing: 0.16em;
   text-transform: uppercase;
   color: var(--color-accent);

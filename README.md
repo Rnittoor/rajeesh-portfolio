@@ -1,36 +1,57 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nittoor Freelance Studio — Portfolio
 
-## Getting Started
+The website for **Nittoor Freelance Studio**, the design practice of [Rajeesh Nittoor](https://www.linkedin.com/in/rajeeshnittoor/) — a freelance UX, service, and system designer based in Amsterdam.
 
-First, run the development server:
+Editorial, minimal, motion-driven. Built to showcase case studies across UX, service design, system design, and information visualization.
+
+## Tech stack
+
+- **[Next.js 16](https://nextjs.org/)** (App Router, React 19)
+- **[Tailwind CSS v4](https://tailwindcss.com/)** — design tokens in `src/app/globals.css`
+- **[Motion](https://motion.dev/)** — scroll reveals and transitions
+- **[Lenis](https://lenis.darkroom.engineering/)** — smooth scrolling
+- **[Fraunces](https://fonts.google.com/specimen/Fraunces)** display serif + **Geist** sans/mono, via `next/font`
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build   # production build
+npm run start   # serve the production build
+npm run lint    # lint
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project structure
 
-## Learn More
+```
+src/
+  app/              # App Router entry, root layout, global styles
+  components/
+    layout/         # Header, Footer, Container, SmoothScroll
+    sections/       # Homepage sections (Hero, SelectedWork, …)
+    ui/             # Reusable pieces (WorkCard, Reveal, Grain, …)
+  data/
+    site.ts         # Brand, nav, contact, bio copy
+    projects.ts     # Case-study content
+```
 
-To learn more about Next.js, take a look at the following resources:
+Editing content rarely means touching components — most copy lives in `src/data/`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Design system
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Design rules (including the type-size guardrail) live in `.kiro/steering/design-system.md`.
+Key rule: the minimum font size anywhere on the site is **17px**.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Deployed on [Vercel](https://vercel.com/). Every push to `main` triggers an automatic deployment.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+© Nittoor Freelance Studio · Registered in the Netherlands · KVK 94193622

@@ -19,7 +19,7 @@ function NavLink({
     <a
       href={href}
       onClick={onClick}
-      className="group relative inline-flex text-[0.9375rem] text-ink"
+      className="group relative inline-flex text-base text-ink"
     >
       <span className="relative">
         {label}
@@ -84,7 +84,7 @@ export function Header() {
           <LocalTime className="font-mono text-label tracking-wide text-ink" />
           <a
             href="#contact"
-            className="group inline-flex items-center gap-2 rounded-full border border-ink px-4 py-2 text-[0.9375rem] text-ink transition-colors hover:border-accent hover:text-accent"
+            className="group inline-flex items-center gap-2 rounded-full border border-ink px-4 py-2 text-base text-ink transition-colors hover:border-accent hover:text-accent"
           >
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-70" />

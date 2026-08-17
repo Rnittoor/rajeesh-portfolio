@@ -55,7 +55,7 @@ export function Capabilities() {
               {capabilities.map((cap, i) => (
                 <Reveal key={cap.id} delay={i * 0.05}>
                   <div className="group grid gap-4 border-b border-hairline py-8 md:grid-cols-12 md:items-baseline md:gap-6">
-                    <span className="font-mono text-sm text-accent md:col-span-1">
+                    <span className="font-mono text-base text-accent md:col-span-1">
                       {cap.id}
                     </span>
                     <h3 className="font-display text-2xl text-ink transition-colors duration-300 group-hover:text-accent md:col-span-4 md:text-3xl">
@@ -66,7 +66,7 @@ export function Capabilities() {
                       {cap.tags.slice(0, 2).map((t) => (
                         <span
                           key={t}
-                          className="rounded-full bg-canvas px-2.5 py-1 text-sm text-muted"
+                          className="rounded-full bg-canvas px-2.5 py-1 text-base text-muted"
                         >
                           {t}
                         </span>

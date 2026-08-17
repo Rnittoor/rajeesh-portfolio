@@ -48,7 +48,7 @@ export function Hero() {
         <motion.div initial="hidden" animate="visible" variants={container}>
           <motion.div variants={fade} className="mb-8 flex items-center gap-4">
             <AvailabilityPill />
-            <span className="hidden text-sm text-muted sm:inline">
+            <span className="hidden text-base text-muted sm:inline">
               {site.role} · {site.location}
             </span>
           </motion.div>
@@ -103,7 +103,7 @@ export function Hero() {
         transition={{ delay: 1.2, duration: 1 }}
         className="container-content mt-20 hidden md:block"
       >
-        <div className="flex items-center gap-3 text-sm text-muted">
+        <div className="flex items-center gap-3 text-base text-muted">
           <span className="eyebrow">Scroll</span>
           <span className="h-px w-16 bg-hairline" />
         </div>

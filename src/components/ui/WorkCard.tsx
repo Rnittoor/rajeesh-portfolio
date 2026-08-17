@@ -101,7 +101,7 @@ export function WorkCard({
           <div className="absolute inset-0 flex flex-col justify-between p-6 md:p-8">
             <span
               className={clsx(
-                "font-mono text-sm tracking-widest",
+                "font-mono text-base tracking-widest",
                 accent.label
               )}
             >
@@ -115,7 +115,7 @@ export function WorkCard({
           {/* Hover CTA */}
           <div
             className={clsx(
-              "absolute bottom-6 right-6 flex items-center gap-2 rounded-full bg-canvas px-4 py-2 text-sm text-ink transition-all duration-500 md:bottom-8 md:right-8",
+              "absolute bottom-6 right-6 flex items-center gap-2 rounded-full bg-canvas px-4 py-2 text-base text-ink transition-all duration-500 md:bottom-8 md:right-8",
               hovered
                 ? "translate-y-0 opacity-100"
                 : "pointer-events-none translate-y-2 opacity-0"
@@ -133,7 +133,7 @@ export function WorkCard({
           {project.disciplines.map((d) => (
             <span
               key={d}
-              className="rounded-full border border-hairline px-3 py-1 text-sm text-muted"
+              className="rounded-full border border-hairline px-3 py-1 text-base text-muted"
             >
               {d}
             </span>
