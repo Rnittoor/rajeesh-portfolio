@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/*
+  Nittoor — design system
+  Editorial / minimal. White canvas, considered blue palette, generous whitespace.
+  Tailwind v4: tokens declared here become utilities (bg-canvas, text-ink, font-display, etc.)
+*/
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+@theme {
+  /* Type families (wired to next/font variables in layout.tsx) */
+  --font-display: var(--font-fraunces);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  /* Neutrals — cool, blue-leaning rather than pure grey */
+  --color-canvas: #ffffff;
+  --color-ink: #0b1a2e;
+  --color-body: #3c485a;
+  --color-muted: #7b8798;
+  --color-faint: #aab3c1;
+  --color-hairline: #e6eaf2;
+  --color-tint: #f5f7fc;
+  --color-tint-2: #eef2fb;
+
+  /* Considered blue scale */
+  --color-blue-50: #eef2ff;
+  --color-blue-100: #e0e7ff;
+  --color-blue-200: #c3d0ff;
+  --color-blue-300: #9db1ff;
+  --color-blue-400: #6a86f7;
+  --color-blue-500: #3f5fe6;
+  --color-blue-600: #2846d6;
+  --color-blue-700: #1f37b0;
+  --color-blue-800: #1c2f8a;
+  --color-blue-900: #16255f;
+
+  /* Accent aliases */
+  --color-accent: #2846d6;
+  --color-accent-hover: #1f37b0;
+  --color-accent-soft: #eaefff;
+
+  /* Editorial type scale (fluid) */
+  --text-display: clamp(3rem, 8vw, 8.5rem);
+  --text-display--line-height: 0.98;
+  --text-display--letter-spacing: -0.03em;
+
+  --text-h1: clamp(2.5rem, 5.5vw, 5rem);
+  --text-h1--line-height: 1.02;
+  --text-h1--letter-spacing: -0.025em;
+
+  --text-h2: clamp(2rem, 3.6vw, 3.25rem);
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.02em;
+
+  --text-lead: clamp(1.35rem, 2.2vw, 2rem);
+  --text-lead--line-height: 1.35;
+  --text-lead--letter-spacing: -0.01em;
+
+  /* Layout: full-bleed container capped, content grid at ~1440 */
+  --container-content: 1440px;
+  --container-wide: 1920px;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* Force light theme — this is an intentional white-canvas editorial site */
+html {
+  color-scheme: light;
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-canvas);
+  color: var(--color-body);
+  font-family: var(--font-sans), system-ui, sans-serif;
+  font-size: 1.0625rem; /* 17px base — calmer editorial reading size */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/*
+  TYPE GUARDRAIL
+  --------------
+  Minimum font size on this site is 0.875rem (14px). Nothing goes below it.
+  - Labels / eyebrows / meta / tags: 14px  (.text-label / .eyebrow)
+  - Body / UI default:               16–17px
+  - Do NOT use Tailwind's text-sm (12px) anywhere.
+*/
+.text-label {
+  font-size: 0.875rem; /* 14px — the floor */
+  line-height: 1.4;
+}
+
+/* Headings use the editorial serif */
+.font-display {
+  font-family: var(--font-display), Georgia, serif;
+  font-optical-sizing: auto;
+}
+
+/* Small caps mono eyebrow labels — the "considered studio" detail */
+.eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.875rem; /* 14px — respects the guardrail */
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* Content column: capped width + responsive gutters */
+.container-content {
+  width: 100%;
+  max-width: var(--container-content);
+  margin-inline: auto;
+  padding-inline: clamp(1.25rem, 5vw, 7.5rem);
+}
+
+/* Selection */
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+/* Respect reduced motion globally */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Slow marquee for the credibility strip */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 32s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
