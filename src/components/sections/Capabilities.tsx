@@ -39,13 +39,14 @@ export function Capabilities() {
             <Reveal>
               <p className="eyebrow">Capabilities</p>
               <h2 className="mt-4 font-display text-h1 text-ink [line-height:var(--text-h1--line-height)] [letter-spacing:var(--text-h1--letter-spacing)]">
-                One designer,
+                From systems
                 <br />
-                across the stack.
+                to screens.
               </h2>
               <p className="mt-6 max-w-sm text-body">
-                Most projects need more than screens. I move between disciplines
-                so the interface and the system behind it stay coherent.
+                I work across product, service and systems design — making
+                complex problems understandable, then turning that understanding
+                into clear, usable experiences.
               </p>
             </Reveal>
           </div>

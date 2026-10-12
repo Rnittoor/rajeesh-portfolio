@@ -14,7 +14,7 @@ export function Positioning() {
 
           <div className="md:col-span-9">
             <Reveal>
-              <p className="font-display text-h2 text-ink [line-height:var(--text-h2--line-height)] [letter-spacing:var(--text-h2--letter-spacing)]">
+              <p className="font-display text-h2 text-ink [line-height:var(--text-h2--line-height)] [letter-spacing:var(--text-h2--letter-spacing)] md:[font-size:calc(var(--text-h2)*.84)] md:leading-[1.1]">
                 {site.bio.body}
               </p>
             </Reveal>

@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Airbus unified aircraft-management dashboard</title>
+  <desc id="desc">A dashboard shown on a desktop monitor, with subtle animated aircraft moving along vertical routes.</desc>
+  <defs>
+    <clipPath id="frame"><rect width="1600" height="1000" rx="42"/></clipPath>
+    <clipPath id="metricsFrame"><rect x="1110" y="170" width="390" height="650" rx="24"/></clipPath>
+    <linearGradient id="leftFade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#102638" stop-opacity=".84"/>
+      <stop offset=".18" stop-color="#102638" stop-opacity=".42"/>
+      <stop offset=".42" stop-color="#102638" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="bottomFade" x1="0" y1="0" x2="0" y2="1">
+      <stop offset=".64" stop-color="#102638" stop-opacity="0"/>
+      <stop offset="1" stop-color="#102638" stop-opacity=".72"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="5" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="panelShadow" x="-30%" y="-20%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="18" stdDeviation="24" flood-color="#020914" flood-opacity=".42"/>
+    </filter>
+    <symbol id="aircraft" viewBox="-24 -28 48 56">
+      <path d="M0-26 5-8 21 1 21 7 6 4 6 18 12 24 12 27 0 23-12 27-12 24-6 18-6 4-21 7-21 1-5-8Z"/>
+    </symbol>
+    <style>
+      .route { animation: route 5s linear infinite; }
+      .route.r2 { animation-delay:-1.8s; }
+      .route.r3 { animation-delay:-3.6s; }
+      @keyframes route { to { stroke-dashoffset:-48; } }
+      @media (prefers-reduced-motion: reduce) {
+        .route { animation:none !important; }
+        .flight { display:none; }
+        .metrics-motion { display:none; }
+        .metrics-still { display:block; }
+      }
+    </style>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1600" height="1000" fill="#102638"/>
+    <image href="airbus-dashboard-context.png" x="0" y="0" width="1600" height="1000" preserveAspectRatio="xMidYMid slice"/>
+    <rect width="1600" height="1000" fill="url(#leftFade)"/>
+    <rect width="1600" height="1000" fill="url(#bottomFade)"/>
+
+    <g fill="none" stroke="#dce8ee" stroke-width="2" stroke-dasharray="20 14" opacity=".38">
+      <path class="route r1" d="M112 192V806"/>
+      <path class="route r2" d="M174 192V806"/>
+      <path class="route r3" d="M236 192V806"/>
+    </g>
+
+    <g class="flight" fill="#f6f2e9" opacity=".9" filter="url(#glow)">
+      <g><use href="#aircraft" x="-15" y="-18" width="30" height="36"/><animateTransform attributeName="transform" type="translate" values="112 230;112 720;112 230" dur="8s" repeatCount="indefinite"/></g>
+      <g><use href="#aircraft" x="-13" y="-16" width="26" height="32"/><animateTransform attributeName="transform" type="translate" values="174 700;174 290;174 700" dur="10s" begin="-3s" repeatCount="indefinite"/></g>
+      <g><use href="#aircraft" x="-12" y="-15" width="24" height="30"/><animateTransform attributeName="transform" type="translate" values="236 310;236 760;236 310" dur="11s" begin="-6s" repeatCount="indefinite"/></g>
+    </g>
+
+    <!-- Animated dashboard detail: ongoing projects and parked-aircraft donut -->
+    <rect x="1110" y="170" width="390" height="650" rx="24" fill="#06183a" filter="url(#panelShadow)"/>
+    <g clip-path="url(#metricsFrame)">
+      <svg class="metrics-motion" x="1110" y="170" width="390" height="650" viewBox="0 500 1378 1674" preserveAspectRatio="xMidYMid slice">
+        <image href="airbus-project-metrics.gif" x="0" y="0" width="1378" height="2174"/>
+      </svg>
+      <svg class="metrics-still" display="none" x="1110" y="170" width="390" height="650" viewBox="0 500 1378 1674" preserveAspectRatio="xMidYMid slice">
+        <image href="airbus-project-metrics-still.png" x="0" y="0" width="1378" height="2174"/>
+      </svg>
+    </g>
+
+    <g font-family="Arial, Helvetica, sans-serif">
+      <text x="82" y="112" fill="#79bde9" font-size="60" font-weight="700">03</text>
+      <text x="82" y="918" fill="#f5f7f8" font-size="25" font-weight="700" letter-spacing="1.2">AIRBUS</text>
+    </g>
+  </g>
+</svg>

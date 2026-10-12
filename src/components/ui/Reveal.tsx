@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, type Variants } from "motion/react";
+import { motion, useReducedMotion, type Variants } from "motion/react";
 import { EASE_OUT } from "@/lib/motion";
 
 type RevealProps = {
@@ -32,12 +32,13 @@ export function Reveal({
   y = 24,
   as = "div",
 }: RevealProps) {
+  const shouldReduceMotion = useReducedMotion();
   const MotionTag = motion[as];
   return (
     <MotionTag
       className={className}
       variants={build(y, delay)}
-      initial="hidden"
+      initial={shouldReduceMotion ? false : "hidden"}
       whileInView="visible"
       viewport={{ once: true, margin: "0px 0px -12% 0px" }}
     >

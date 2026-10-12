@@ -25,15 +25,15 @@ const fraunces = Fraunces({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rajeeshnittoor.nl"),
   title: {
-    default: "Nittoor — Design for complex systems, made simple to use",
-    template: "%s — Nittoor",
+    default: "Rajeesh Nittoor — Senior UX & Product Designer",
+    template: "%s — Rajeesh Nittoor",
   },
   description:
-    "Nittoor is a freelance design practice in Amsterdam by Rajeesh Nittoor, working across UX, service, and system design for clients like Airbus and IKEA.",
+    "Rajeesh Nittoor is a Senior UX & Product Designer in Amsterdam, working across product, service and systems design.",
   openGraph: {
-    title: "Nittoor — Design studio, Amsterdam",
+    title: "Rajeesh Nittoor — Senior UX & Product Designer",
     description:
-      "Design across UX, service, and system design. A freelance practice by Rajeesh Nittoor.",
+      "Senior UX & Product Designer in Amsterdam, working across product, service and systems design.",
     type: "website",
     locale: "en_NL",
   },
@@ -46,10 +46,18 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${geistMono.variable} ${fraunces.variable} antialiased`}
     >
       <body className="min-h-screen bg-canvas text-body">
+        <a
+          href="#main-content"
+          className="fixed left-4 top-4 z-[100] -translate-y-24 rounded-full bg-ink px-5 py-3 text-canvas transition-transform focus-visible:translate-y-0"
+        >
+          Skip to content
+        </a>
         <Grain />
         <SmoothScroll>
           <Header />
-          <main>{children}</main>
+          <main id="main-content" tabIndex={-1}>
+            {children}
+          </main>
           <Footer />
         </SmoothScroll>
       </body>

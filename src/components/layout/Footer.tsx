@@ -5,12 +5,8 @@ export function Footer() {
   return (
     <footer className="border-t border-hairline bg-canvas">
       <div className="container-content flex flex-col gap-6 py-10 text-base text-muted md:flex-row md:items-center md:justify-between">
-        <p>
-          © {year} {site.fullName} · Registered in the Netherlands
-        </p>
+        <p>© {year} {site.founder}.</p>
         <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-          <span>KVK: {site.kvk}</span>
-          <span>VAT: {site.vat}</span>
           <a
             href={site.linkedin}
             target="_blank"

@@ -1,6 +1,5 @@
 import { site } from "@/data/site";
 import { Reveal } from "@/components/ui/Reveal";
-import { AvailabilityPill } from "@/components/ui/AvailabilityPill";
 
 export function ContactCta() {
   return (
@@ -13,22 +12,17 @@ export function ContactCta() {
         className="pointer-events-none absolute -bottom-40 left-1/2 h-[32rem] w-[32rem] -translate-x-1/2 rounded-full bg-blue-100/60 blur-3xl"
       />
       <div className="container-content relative text-center">
-        <Reveal>
-          <div className="flex justify-center">
-            <AvailabilityPill />
-          </div>
-        </Reveal>
         <Reveal delay={0.05}>
           <h2 className="mx-auto mt-8 max-w-4xl font-display text-ink [font-size:var(--text-display)] [line-height:1.02] [letter-spacing:var(--text-display--letter-spacing)]">
             Have a complex problem?
             <br />
-            <span className="italic text-accent">Let’s map it.</span>
+            <span className="italic text-accent">Let’s make it clear.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
           <p className="mx-auto mt-8 max-w-xl text-lead text-body">
-            Whether you’re hiring or have a project in mind, I’d love to hear
-            about it.
+            I’m open to conversations about senior UX, Product and Service
+            Design opportunities.
           </p>
         </Reveal>
         <Reveal delay={0.15}>

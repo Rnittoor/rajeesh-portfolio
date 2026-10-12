@@ -16,7 +16,7 @@
   --color-canvas: #ffffff;
   --color-ink: #0b1a2e;
   --color-body: #3c485a;
-  --color-muted: #7b8798;
+  --color-muted: #667386;
   --color-faint: #aab3c1;
   --color-hairline: #e6eaf2;
   --color-tint: #f5f7fc;
@@ -72,6 +72,12 @@
 html {
   color-scheme: light;
   scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+.ikea-service-case-study :where(section, h2, h3, figure, details),
+.ikea-data-visualisation-case-study :where(section, h2, h3, figure, details) {
+  scroll-margin-top: 6rem;
 }
 
 body {
@@ -125,6 +131,12 @@ body {
 ::selection {
   background: var(--color-accent);
   color: #fff;
+}
+
+/* A consistent keyboard-focus treatment across navigation, CTAs, and cards. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 4px;
 }
 
 /* Respect reduced motion globally */

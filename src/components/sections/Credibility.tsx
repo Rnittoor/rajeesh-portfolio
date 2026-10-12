@@ -11,14 +11,17 @@ const clients = [
 ];
 
 export function Credibility() {
+  const selectedClients = clients.filter((client) =>
+    ["Airbus", "IKEA", "Kerala Tourism"].includes(client)
+  );
   // Duplicate the list so the marquee loops seamlessly at -50%.
-  const track = [...clients, ...clients];
+  const track = [...selectedClients, ...selectedClients];
 
   return (
-    <section className="border-t border-hairline bg-ink py-16 text-canvas md:py-20">
+    <section className="border-t border-hairline bg-ink py-[3.2rem] text-canvas md:py-16">
       <div className="container-content">
         <Reveal>
-          <p className="eyebrow text-blue-300">Trusted with work for</p>
+          <p className="eyebrow text-blue-300">Selected clients</p>
         </Reveal>
       </div>
 

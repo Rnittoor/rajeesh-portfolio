@@ -4,10 +4,10 @@ export const site = {
   name: "Nittoor",
   fullName: "Nittoor Freelance Studio",
   founder: "Rajeesh Nittoor",
-  role: "UX · Service · System Design",
+  role: "UX · Product · Service Design",
   location: "Amsterdam, NL",
   available: true,
-  availabilityLabel: "Available for projects — 2026",
+  availabilityLabel: "Open to senior design opportunities",
 
   email: "rajeeshnittoor@gmail.com",
   linkedin: "https://www.linkedin.com/in/rajeeshnittoor/",
@@ -17,23 +17,23 @@ export const site = {
   vat: "NL005070003B10",
 
   nav: [
-    { label: "Work", href: "#work" },
-    { label: "Contact", href: "#contact" },
+    { label: "Work", href: "/#work" },
+    { label: "Contact", href: "/#contact" },
   ],
 
   hero: {
     // The big statement — carries the brand.
     lead: "Design for complex systems,",
     leadAccent: "made simple to use.",
-    sub: "A freelance design practice in Amsterdam working across UX, service, and system design.",
+    sub: "Senior UX & Product Designer in Amsterdam, working across product, service and systems design.",
   },
 
   // Bio blurb — craft-forward, first person as a practice.
   bio: {
-    eyebrow: "The practice",
-    body: "I’m Rajeesh, the designer behind Nittoor. I work where UX, service, and system design meet — from a single interface to the service and systems around it. With a background in architecture and five years in UX, I help teams untangle complex problems and turn them into experiences people actually understand.",
+    eyebrow: "About",
+    body: "I’m Rajeesh, a Senior UX & Product Designer with 7+ years of experience turning complex systems into clear, usable experiences. With a background in architecture, I work across product, service and systems design — understanding the wider system before deciding what the interface needs to do.",
     highlights: [
-      "5+ years in UX",
+      "7+ years in UX",
       "Architecture background",
       "Amsterdam · working worldwide",
     ],

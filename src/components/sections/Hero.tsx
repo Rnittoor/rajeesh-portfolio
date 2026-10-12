@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
+import { motion, useReducedMotion } from "motion/react";
 import { site } from "@/data/site";
 import { AvailabilityPill } from "@/components/ui/AvailabilityPill";
 import { EASE_OUT } from "@/lib/motion";
@@ -29,6 +29,8 @@ const fade = {
 };
 
 export function Hero() {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
       id="top"
@@ -45,7 +47,11 @@ export function Hero() {
       />
 
       <div className="container-content relative">
-        <motion.div initial="hidden" animate="visible" variants={container}>
+        <motion.div
+          initial={shouldReduceMotion ? false : "hidden"}
+          animate="visible"
+          variants={container}
+        >
           <motion.div variants={fade} className="mb-8 flex items-center gap-4">
             <AvailabilityPill />
             <span className="hidden text-base text-muted sm:inline">
@@ -90,24 +96,13 @@ export function Hero() {
               href="#contact"
               className="inline-flex items-center gap-2 rounded-full border border-hairline px-6 py-3 text-ink transition-colors hover:border-accent hover:text-accent"
             >
-              Start a project
+              Get in touch
             </a>
           </motion.div>
         </motion.div>
       </div>
 
-      {/* Scroll cue */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.2, duration: 1 }}
-        className="container-content mt-20 hidden md:block"
-      >
-        <div className="flex items-center gap-3 text-base text-muted">
-          <span className="eyebrow">Scroll</span>
-          <span className="h-px w-16 bg-hairline" />
-        </div>
-      </motion.div>
+      <div aria-hidden className="container-content mt-20 hidden h-[1.7rem] md:block" />
     </section>
   );
 }

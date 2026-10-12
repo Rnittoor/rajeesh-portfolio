@@ -4,7 +4,6 @@ import { SelectedWork } from "@/components/sections/SelectedWork";
 import { Capabilities } from "@/components/sections/Capabilities";
 import { Approach } from "@/components/sections/Approach";
 import { Credibility } from "@/components/sections/Credibility";
-import { StudioTeaser } from "@/components/sections/StudioTeaser";
 import { ContactCta } from "@/components/sections/ContactCta";
 
 export default function Home() {
@@ -16,7 +15,6 @@ export default function Home() {
       <Capabilities />
       <Approach />
       <Credibility />
-      <StudioTeaser />
       <ContactCta />
     </>
   );

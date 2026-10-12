@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Abstract global marketing service map</title>
+  <desc id="desc">An animated abstract service map showing connected experience, interaction and backstage activity across a global service.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102638"/>
+      <stop offset="1" stop-color="#17364b"/>
+    </linearGradient>
+    <filter id="glow" x="-100%" y="-100%" width="300%" height="300%">
+      <feGaussianBlur stdDeviation="11" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="cardShadow" x="-30%" y="-30%" width="160%" height="170%">
+      <feDropShadow dx="0" dy="14" stdDeviation="14" flood-color="#07131d" flood-opacity=".28"/>
+    </filter>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8.5" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M0 0 10 5 0 10Z" fill="#a9c7d9"/>
+    </marker>
+    <style>
+      .card { transform-box: fill-box; transform-origin: center; }
+      .c1 { animation: drift-a 7s ease-in-out infinite; }
+      .c2 { animation: drift-b 8.5s ease-in-out -1.6s infinite; }
+      .c3 { animation: drift-a 9s ease-in-out -3.2s infinite; }
+      .c4 { animation: drift-b 7.5s ease-in-out -4.1s infinite; }
+      .pulse { animation: pulse 3.4s ease-in-out infinite; }
+      @keyframes drift-a { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+      @keyframes drift-b { 0%,100%{transform:translateY(0)} 50%{transform:translateY(9px)} }
+      @keyframes pulse { 0%,100%{opacity:.45} 50%{opacity:1} }
+      @media (prefers-reduced-motion: reduce) {
+        .card,.pulse { animation:none !important; }
+        .signal { display:none; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" rx="42" fill="url(#bg)"/>
+  <path d="M0 0H1600V1000H0Z" fill="none" stroke="#31526a" stroke-width="2" opacity=".7"/>
+
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="82" y="112" fill="#79bde9" font-size="60" font-weight="700">01</text>
+    <text x="82" y="918" fill="#f5f7f8" font-size="25" font-weight="700" letter-spacing="1.2">IKEA</text>
+  </g>
+
+  <!-- experience rail -->
+  <path id="experiencePath" d="M260 252H1335" fill="none" stroke="#a9c7d9" stroke-width="5" marker-end="url(#arrow)"/>
+  <g fill="#dce8ee">
+    <circle cx="345" cy="252" r="11"/><circle cx="612" cy="252" r="11"/><circle cx="879" cy="252" r="11"/><circle cx="1146" cy="252" r="11"/>
+  </g>
+  <g class="signal" filter="url(#glow)">
+    <circle r="8" fill="#d9f2ff"><animateMotion dur="5.5s" repeatCount="indefinite"><mpath href="#experiencePath"/></animateMotion></circle>
+  </g>
+
+  <!-- vertical handoffs and lower flow -->
+  <g fill="none" stroke="#a9c7d9" stroke-width="4" marker-end="url(#arrow)">
+    <path d="M345 263V392"/><path d="M612 263V330"/><path d="M879 263V392"/><path d="M1146 263V392"/>
+    <path d="M345 458V596H612"/><path d="M612 396V596"/><path d="M879 458V596H1146"/><path d="M1146 458V596"/>
+    <path id="lowerPath" d="M612 596H879V790H1146"/>
+  </g>
+  <g class="signal" filter="url(#glow)">
+    <circle r="8" fill="#d9f2ff"><animateMotion dur="4.8s" begin="1.4s" repeatCount="indefinite"><mpath href="#lowerPath"/></animateMotion></circle>
+  </g>
+
+  <!-- interaction cards -->
+  <g filter="url(#cardShadow)">
+    <g class="card c1"><rect x="278" y="340" width="134" height="118" rx="12" fill="#f6f2e9"/></g>
+    <g class="card c2"><rect x="545" y="330" width="134" height="118" rx="12" fill="#dce8ee"/></g>
+    <g class="card c3"><rect x="812" y="340" width="134" height="118" rx="12" fill="#a9c7d9"/></g>
+    <g class="card c4"><rect x="1079" y="340" width="134" height="118" rx="12" fill="#f6f2e9"/></g>
+  </g>
+
+  <!-- backstage cards -->
+  <g filter="url(#cardShadow)">
+    <g class="card c3"><rect x="278" y="596" width="134" height="118" rx="12" fill="#dce8ee"/></g>
+    <g class="card c1"><rect x="545" y="538" width="134" height="118" rx="12" fill="#f6f2e9"/></g>
+    <g class="card c4"><rect x="812" y="596" width="134" height="118" rx="12" fill="#a9c7d9"/></g>
+    <g class="card c2"><rect x="1079" y="538" width="134" height="118" rx="12" fill="#dce8ee"/></g>
+    <g class="card c1"><rect x="812" y="740" width="134" height="98" rx="12" fill="#f6f2e9"/></g>
+    <g class="card c3"><rect x="1079" y="740" width="134" height="98" rx="12" fill="#a9c7d9"/></g>
+  </g>
+
+  <!-- abstract role keys -->
+  <g fill="#7895a8" opacity=".9" class="pulse">
+    <rect x="82" y="302" width="88" height="8" rx="4"/><rect x="82" y="320" width="58" height="8" rx="4"/>
+    <rect x="82" y="528" width="108" height="8" rx="4"/><rect x="82" y="546" width="72" height="8" rx="4"/>
+    <rect x="82" y="756" width="76" height="8" rx="4"/><rect x="82" y="774" width="112" height="8" rx="4"/>
+  </g>
+</svg>

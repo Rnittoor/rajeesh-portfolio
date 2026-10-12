@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1000" viewBox="0 0 1600 1000" role="img" aria-labelledby="title desc">
+  <title id="title">Attributes of visual encoding</title>
+  <desc id="desc">Six animated cards demonstrate how shape, colour, size, area, length and position encode data.</desc>
+  <defs>
+    <linearGradient id="canvas" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#102638"/>
+      <stop offset="1" stop-color="#17364b"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="150%">
+      <feDropShadow dx="0" dy="10" stdDeviation="16" flood-color="#07131d" flood-opacity=".22"/>
+    </filter>
+    <style>
+      .shape-a { animation: shape-a 7s ease-in-out infinite; transform-box:fill-box; transform-origin:center; }
+      .shape-b { animation: shape-b 7s ease-in-out -2.3s infinite; transform-box:fill-box; transform-origin:center; }
+      .shape-c { animation: shape-c 7s ease-in-out -4.6s infinite; transform-box:fill-box; transform-origin:center; }
+      .colour-a { animation: colour-a 6s ease-in-out infinite; }
+      .colour-b { animation: colour-b 6s ease-in-out infinite; }
+      .colour-c { animation: colour-c 6s ease-in-out infinite; }
+      .size-a,.size-b,.size-c { transform-box:fill-box; transform-origin:center; }
+      .size-a { animation:size-a 6.4s ease-in-out infinite; }
+      .size-b { animation:size-b 6.4s ease-in-out -2.1s infinite; }
+      .size-c { animation:size-c 6.4s ease-in-out -4.2s infinite; }
+      .area-a,.area-b,.area-c { transform-box:fill-box; transform-origin:left center; }
+      .area-a { animation:area-a 7.2s ease-in-out infinite; }
+      .area-b { animation:area-b 7.2s ease-in-out infinite; }
+      .area-c { animation:area-c 7.2s ease-in-out infinite; }
+      .length-a,.length-b,.length-c { transform-box:fill-box; transform-origin:left center; }
+      .length-a { animation:length-a 6.8s ease-in-out infinite; }
+      .length-b { animation:length-b 6.8s ease-in-out -1.7s infinite; }
+      .length-c { animation:length-c 6.8s ease-in-out -3.4s infinite; }
+      .position-a,.position-b,.position-c { transform-box:fill-box; transform-origin:center bottom; }
+      .position-a { animation:position-a 7.6s ease-in-out infinite; }
+      .position-b { animation:position-b 7.6s ease-in-out -2.5s infinite; }
+      .position-c { animation:position-c 7.6s ease-in-out -5s infinite; }
+      @keyframes shape-a { 0%,100%{transform:translateX(0)} 50%{transform:translateX(10px)} }
+      @keyframes shape-b { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-8px) rotate(5deg)} }
+      @keyframes shape-c { 0%,100%{transform:translateX(0)} 50%{transform:translateX(-10px)} }
+      @keyframes colour-a { 0%,100%{fill:#f6f2e9} 50%{fill:#a9c7d9} }
+      @keyframes colour-b { 0%,100%{fill:#dce8ee} 50%{fill:#f6f2e9} }
+      @keyframes colour-c { 0%,100%{fill:#a9c7d9} 50%{fill:#dce8ee} }
+      @keyframes size-a { 0%,100%{transform:scale(1)} 50%{transform:scale(.86)} }
+      @keyframes size-b { 0%,100%{transform:scale(1)} 50%{transform:scale(1.12)} }
+      @keyframes size-c { 0%,100%{transform:scale(1)} 50%{transform:scale(.82)} }
+      @keyframes area-a { 0%,100%{transform:scaleX(1)} 50%{transform:scaleX(.78)} }
+      @keyframes area-b { 0%,100%{transform:translateX(0) scaleX(1)} 50%{transform:translateX(-22px) scaleX(1.22)} }
+      @keyframes area-c { 0%,100%{transform:translateX(0) scaleX(1)} 50%{transform:translateX(3px) scaleX(.9)} }
+      @keyframes length-a { 0%,100%{transform:scaleX(1)} 50%{transform:scaleX(.76)} }
+      @keyframes length-b { 0%,100%{transform:scaleX(.72)} 50%{transform:scaleX(.94)} }
+      @keyframes length-c { 0%,100%{transform:scaleX(.88)} 50%{transform:scaleX(.66)} }
+      @keyframes position-a { 0%,100%{transform:translateY(0) scaleY(1)} 50%{transform:translateY(13px) scaleY(.8)} }
+      @keyframes position-b { 0%,100%{transform:translateY(0) scaleY(.82)} 50%{transform:translateY(-12px) scaleY(1.08)} }
+      @keyframes position-c { 0%,100%{transform:translateY(0) scaleY(.65)} 50%{transform:translateY(6px) scaleY(.92)} }
+      @media (prefers-reduced-motion: reduce) {
+        .shape-a,.shape-b,.shape-c,.colour-a,.colour-b,.colour-c,.size-a,.size-b,.size-c,
+        .area-a,.area-b,.area-c,.length-a,.length-b,.length-c,.position-a,.position-b,.position-c { animation:none !important; }
+      }
+    </style>
+  </defs>
+
+  <rect width="1600" height="1000" rx="42" fill="url(#canvas)"/>
+  <g font-family="Arial, Helvetica, sans-serif">
+    <text x="82" y="112" fill="#79bde9" font-size="60" font-weight="700">02</text>
+    <text x="82" y="918" fill="#f5f7f8" font-size="25" font-weight="700" letter-spacing="1.2">IKEA</text>
+  </g>
+
+  <g filter="url(#shadow)">
+    <rect x="82" y="150" width="1436" height="706" rx="28" fill="#17354a"/>
+  </g>
+
+  <!-- tiles -->
+  <g fill="#1a3b51">
+    <rect x="112" y="180" width="432" height="306" rx="12"/>
+    <rect x="584" y="180" width="432" height="306" rx="12"/>
+    <rect x="1056" y="180" width="432" height="306" rx="12"/>
+    <rect x="112" y="516" width="432" height="310" rx="12"/>
+    <rect x="584" y="516" width="432" height="310" rx="12"/>
+    <rect x="1056" y="516" width="432" height="310" rx="12"/>
+  </g>
+
+  <!-- shape -->
+  <g fill="#f6f2e9">
+    <circle class="shape-a" cx="236" cy="298" r="45"/>
+    <path class="shape-b" d="M328 252 376 338H280Z"/>
+    <rect class="shape-c" x="410" y="263" width="78" height="70" rx="2"/>
+  </g>
+
+  <!-- colour -->
+  <g>
+    <circle class="colour-a" cx="700" cy="298" r="43" fill="#f6f2e9"/>
+    <circle class="colour-b" cx="800" cy="298" r="43" fill="#dce8ee"/>
+    <circle class="colour-c" cx="900" cy="298" r="43" fill="#a9c7d9"/>
+  </g>
+
+  <!-- size -->
+  <g fill="#f6f2e9">
+    <circle class="size-a" cx="1178" cy="314" r="54"/>
+    <circle class="size-b" cx="1281" cy="280" r="43"/>
+    <circle class="size-c" cx="1370" cy="248" r="28"/>
+  </g>
+
+  <!-- area -->
+  <g>
+    <rect class="area-a" x="160" y="614" width="126" height="112" fill="#f6f2e9"/>
+    <rect class="area-b" x="286" y="614" width="108" height="112" fill="#dce8ee"/>
+    <rect class="area-c" x="394" y="614" width="102" height="64" fill="#a9c7d9"/>
+    <rect x="394" y="678" width="102" height="48" fill="#789eb5"/>
+  </g>
+
+  <!-- length -->
+  <g fill="#f6f2e9">
+    <rect class="length-a" x="632" y="594" width="334" height="34" rx="2"/>
+    <rect class="length-b" x="632" y="650" width="334" height="34" rx="2"/>
+    <rect class="length-c" x="632" y="706" width="334" height="34" rx="2"/>
+  </g>
+
+  <!-- position -->
+  <g fill="none" stroke="#7895a8" stroke-width="3"><path d="M1110 730V584M1110 730H1434"/></g>
+  <g fill="#f6f2e9">
+    <rect class="position-a" x="1204" y="598" width="44" height="132"/>
+    <rect class="position-b" x="1274" y="598" width="44" height="132"/>
+    <rect class="position-c" x="1344" y="598" width="44" height="132"/>
+  </g>
+</svg>

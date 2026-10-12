@@ -4,22 +4,22 @@ const steps = [
   {
     id: "01",
     title: "Understand the system",
-    body: "Research the context, stakeholders, and the forces at play — before touching a screen.",
+    body: "Research the people, context, dependencies and constraints before deciding what to design.",
   },
   {
     id: "02",
-    title: "Map the experience",
-    body: "Journeys, blueprints, and models that make a complex problem visible and shared.",
+    title: "Make complexity visible",
+    body: "Use journeys, maps and models to create a shared understanding of the problem.",
   },
   {
     id: "03",
-    title: "Design the interface",
-    body: "Translate structure into clear, considered, buildable UI with strong craft.",
+    title: "Turn structure into experience",
+    body: "Translate that understanding into clear flows, interactions and interfaces.",
   },
   {
     id: "04",
-    title: "Validate & refine",
-    body: "Test with real people, learn, and sharpen until it holds up in the real world.",
+    title: "Test it in reality",
+    body: "Validate with people, learn from what breaks, and refine the experience.",
   },
 ];
 
@@ -34,7 +34,7 @@ export function Approach() {
           </h2>
         </Reveal>
 
-        <div className="mt-16 grid gap-x-10 gap-y-12 md:mt-24 md:grid-cols-4">
+        <div className="mt-16 grid gap-x-10 gap-y-12 md:mt-[4.5rem] md:grid-cols-4">
           {steps.map((step, i) => (
             <Reveal key={step.id} delay={i * 0.08}>
               <div className="border-t border-ink/80 pt-6">
