@@ -57,44 +57,16 @@ export function WorkCard({
     }
 
     if (project.slug === "ikea-global-marketing-service-design") {
-      const marketMaps = [
-        ["Austria", "/projects/ikea-service/L2 Austria.jpg"],
-        ["Canada", "/projects/ikea-service/L2 Canada.jpg"],
-        ["Germany", "/projects/ikea-service/L2 Germany.jpg"],
-        ["Sweden", "/projects/ikea-service/L2 Sweden.jpg"],
-        ["US", "/projects/ikea-service/L2 US.jpg"],
-      ];
-
       return (
-        <div className="absolute inset-0 grid grid-cols-[1.45fr_.9fr] gap-3 bg-[#0b1a2e] p-4 sm:gap-4 sm:p-6 md:p-8">
-          <div className="relative overflow-hidden rounded-xl bg-white shadow-[0_18px_50px_rgba(0,0,0,.22)]">
+        <div className="absolute inset-0 bg-[#0b1a2e] p-4 sm:p-6 md:p-8">
+          <div className="relative h-full overflow-hidden rounded-xl bg-[#102638] shadow-[0_18px_50px_rgba(0,0,0,.22)]">
             <Image
-              src={marketMaps[1][1]}
-              alt="Level 2 service maps comparing IKEA Content Process Flow across five markets"
+              src="/projects/project-01-ikea-service-design.svg"
+              alt="Abstract global marketing service map showing connected experience, interaction and backstage activity"
               fill
-              sizes="(min-width: 768px) 38vw, 65vw"
-              className="scale-[1.18] object-cover object-[48%_30%] transition-transform duration-700 ease-out group-hover:scale-[1.2]"
+              sizes="(min-width: 768px) 58vw, 100vw"
+              className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
             />
-            <span className="absolute bottom-3 left-3 rounded-full bg-ink/90 px-2.5 py-1 font-mono text-[10px] uppercase tracking-[.08em] text-canvas sm:text-xs">
-              Canada · Level 2
-            </span>
-          </div>
-          <div className="grid grid-cols-2 gap-2 sm:gap-3">
-            {marketMaps.filter(([market]) => market !== "Canada").map(([market, src]) => (
-              <div key={market} className="relative overflow-hidden rounded-lg bg-white">
-                <Image
-                  src={src}
-                  alt=""
-                  aria-hidden="true"
-                  fill
-                  sizes="(min-width: 768px) 10vw, 18vw"
-                  className="scale-[1.45] object-cover object-[48%_28%] transition-transform duration-700 ease-out group-hover:scale-[1.48]"
-                />
-                <span className="absolute bottom-1.5 left-1.5 rounded-full bg-ink/90 px-1.5 py-0.5 font-mono text-[8px] uppercase tracking-[.06em] text-canvas sm:bottom-2 sm:left-2 sm:px-2 sm:text-[10px]">
-                  {market}
-                </span>
-              </div>
-            ))}
           </div>
         </div>
       );
@@ -103,13 +75,13 @@ export function WorkCard({
     if (project.slug === "ikea-data-visualisation-system") {
       return (
         <div className="absolute inset-0 bg-[#0b1a2e] p-4 sm:p-6 md:p-8">
-          <div className="relative h-full overflow-hidden rounded-xl bg-[#f3f3f3] shadow-[0_18px_50px_rgba(0,0,0,.22)]">
+          <div className="relative h-full overflow-hidden rounded-xl bg-[#102638] shadow-[0_18px_50px_rgba(0,0,0,.22)]">
             <Image
-              src="/projects/ikea-data-visualisation/marketing-dashboard-redesign.png"
-              alt="Redesigned IKEA Marketing Performance dashboard"
+              src="/projects/project-02-ikea-data-visualisation.svg"
+              alt="Animated visual encoding studies showing shape, colour, size, area, length and position"
               fill
               sizes="(min-width: 768px) 58vw, 100vw"
-              className="object-cover object-[42%_20%] transition-transform duration-700 ease-out group-hover:scale-[1.015]"
+              className="object-cover object-center transition-transform duration-700 ease-out group-hover:scale-[1.015]"
             />
           </div>
         </div>
