@@ -9,15 +9,19 @@ import { site } from "@/data/site";
 function NavLink({
   href,
   label,
+  newTab = false,
   onClick,
 }: {
   href: string;
   label: string;
+  newTab?: boolean;
   onClick?: () => void;
 }) {
   return (
     <Link
       href={href}
+      target={newTab ? "_blank" : undefined}
+      rel={newTab ? "noopener noreferrer" : undefined}
       onClick={onClick}
       className="group relative inline-flex text-base text-ink"
     >
@@ -73,15 +77,18 @@ export function Header() {
           </span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav className="hidden items-center gap-7 md:flex">
-          {site.nav.map((item) => (
-            <NavLink key={item.href} href={item.href} label={item.label} />
-          ))}
-        </nav>
-
-        {/* Desktop CTA */}
-        <div className="hidden items-center md:flex">
+        {/* Desktop actions */}
+        <div className="hidden items-center gap-7 md:flex">
+          <nav className="flex items-center gap-7">
+            {site.nav.map((item) => (
+              <NavLink
+                key={item.href}
+                href={item.href}
+                label={item.label}
+                newTab={item.newTab}
+              />
+            ))}
+          </nav>
           <Link
             href="/#contact"
             className="group inline-flex items-center gap-2 rounded-full border border-ink px-4 py-1 text-base text-ink transition-colors hover:border-accent hover:text-accent"
@@ -90,7 +97,7 @@ export function Header() {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-70" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-accent" />
             </span>
-            Let&rsquo;s talk
+            Let&rsquo;s talk <span aria-hidden="true">→</span>
           </Link>
         </div>
 
@@ -137,6 +144,8 @@ export function Header() {
             <Link
               key={item.href}
               href={item.href}
+              target={item.newTab ? "_blank" : undefined}
+              rel={item.newTab ? "noopener noreferrer" : undefined}
               onClick={() => setOpen(false)}
               className="flex items-baseline gap-3 rounded-2xl px-4 py-3 text-lg text-ink transition-colors hover:bg-tint"
             >

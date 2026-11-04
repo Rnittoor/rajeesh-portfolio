@@ -29,13 +29,13 @@ export const metadata: Metadata = {
     template: "%s — Rajeesh Nittoor",
   },
   description:
-    "Rajeesh Nittoor is a Senior UX & Product Designer in Amsterdam, working across product, service and systems design.",
+    "Rajeesh Nittoor is a Senior UX & Product Designer relocating to London, working across product, service and systems design.",
   openGraph: {
     title: "Rajeesh Nittoor — Senior UX & Product Designer",
     description:
-      "Senior UX & Product Designer in Amsterdam, working across product, service and systems design.",
+      "Rajeesh Nittoor is a Senior UX & Product Designer relocating to London, working across product, service and systems design.",
     type: "website",
-    locale: "en_NL",
+    locale: "en_GB",
   },
 };
 

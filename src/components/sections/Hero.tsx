@@ -2,7 +2,6 @@
 
 import { motion, useReducedMotion } from "motion/react";
 import { site } from "@/data/site";
-import { AvailabilityPill } from "@/components/ui/AvailabilityPill";
 import { EASE_OUT } from "@/lib/motion";
 
 const container = {
@@ -34,7 +33,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden pt-32 pb-20 md:pt-44 md:pb-28"
+      className="relative overflow-hidden pt-32 pb-16 md:pt-44 md:pb-20"
     >
       {/* Soft blue field, top-right — quiet personality, not decoration overload */}
       <div
@@ -52,57 +51,29 @@ export function Hero() {
           animate="visible"
           variants={container}
         >
-          <motion.div variants={fade} className="mb-8 flex items-center gap-4">
-            <AvailabilityPill />
-            <span className="hidden text-base text-muted sm:inline">
-              {site.role} · {site.location}
-            </span>
-          </motion.div>
-
-          <h1 className="font-display text-ink [font-size:var(--text-display)] [line-height:var(--text-display--line-height)] [letter-spacing:var(--text-display--letter-spacing)]">
+          <h1 className="max-w-[75rem] font-display text-ink [font-size:clamp(3rem,5.3vw,6.5rem)] [line-height:var(--text-display--line-height)] [letter-spacing:var(--text-display--letter-spacing)]">
             <span className="block overflow-hidden">
               <motion.span variants={line} className="block">
-                {site.hero.lead}
-              </motion.span>
-            </span>
-            <span className="block overflow-hidden">
-              <motion.span variants={line} className="block italic text-accent">
-                {site.hero.leadAccent}
+                {site.hero.headline}
               </motion.span>
             </span>
           </h1>
 
-          <motion.p
+          <motion.ul
             variants={fade}
-            className="mt-8 max-w-xl text-lead text-body [line-height:var(--text-lead--line-height)]"
+            className="mt-10 flex max-w-5xl flex-wrap gap-3"
           >
-            {site.hero.sub}
-          </motion.p>
-
-          <motion.div
-            variants={fade}
-            className="mt-10 flex flex-wrap items-center gap-4"
-          >
-            <a
-              href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-canvas transition-colors hover:bg-accent-hover"
-            >
-              See selected work
-              <span className="transition-transform duration-300 group-hover:translate-x-1">
-                →
-              </span>
-            </a>
-            <a
-              href="#contact"
-              className="inline-flex items-center gap-2 rounded-full border border-hairline px-6 py-3 text-ink transition-colors hover:border-accent hover:text-accent"
-            >
-              Get in touch
-            </a>
-          </motion.div>
+            {site.hero.pills.map((pill) => (
+              <li
+                key={pill}
+                className="rounded-full border border-hairline bg-canvas/75 px-4 py-2 text-base text-ink backdrop-blur"
+              >
+                {pill}
+              </li>
+            ))}
+          </motion.ul>
         </motion.div>
       </div>
-
-      <div aria-hidden className="container-content mt-20 hidden h-[1.7rem] md:block" />
     </section>
   );
 }

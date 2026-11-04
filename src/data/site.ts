@@ -5,7 +5,7 @@ export const site = {
   fullName: "Nittoor Freelance Studio",
   founder: "Rajeesh Nittoor",
   role: "UX · Product · Service Design",
-  location: "Amsterdam, NL",
+  location: "Relocating to London, UK",
   available: true,
   availabilityLabel: "Open to senior design opportunities",
 
@@ -17,15 +17,19 @@ export const site = {
   vat: "NL005070003B10",
 
   nav: [
-    { label: "Work", href: "/#work" },
-    { label: "Contact", href: "/#contact" },
+    { label: "Work", href: "/#work", newTab: false },
+    { label: "Resume", href: "/Rajeesh_Nittoor_CV.pdf", newTab: true },
   ],
 
   hero: {
-    // The big statement — carries the brand.
-    lead: "Design for complex systems,",
-    leadAccent: "made simple to use.",
-    sub: "Senior UX & Product Designer in Amsterdam, working across product, service and systems design.",
+    headline: "I turn complex systems into products people can use.",
+    pills: [
+      "UX & Product Design",
+      "7+ years",
+      "Service Design",
+      "Research → Product",
+      "Relocating to London",
+    ],
   },
 
   // Bio blurb — craft-forward, first person as a practice.
@@ -35,7 +39,7 @@ export const site = {
     highlights: [
       "7+ years in UX",
       "Architecture background",
-      "Amsterdam · working worldwide",
+      "Relocating to London · working worldwide",
     ],
   },
 } as const;

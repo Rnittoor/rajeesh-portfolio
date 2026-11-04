@@ -1,6 +1,7 @@
 import { Hero } from "@/components/sections/Hero";
 import { Positioning } from "@/components/sections/Positioning";
 import { SelectedWork } from "@/components/sections/SelectedWork";
+import { MoreSelectedWork } from "@/components/sections/MoreSelectedWork";
 import { Capabilities } from "@/components/sections/Capabilities";
 import { Approach } from "@/components/sections/Approach";
 import { Credibility } from "@/components/sections/Credibility";
@@ -12,6 +13,7 @@ export default function Home() {
       <Hero />
       <Positioning />
       <SelectedWork />
+      <MoreSelectedWork />
       <Capabilities />
       <Approach />
       <Credibility />
