@@ -33,6 +33,7 @@ function Visual({
   src,
   alt,
   caption,
+  size = "mediumWide",
   priority = false,
   width = 3507,
   height = 2480,
@@ -40,12 +41,19 @@ function Visual({
   src: string;
   alt: string;
   caption: string;
+  size?: "medium" | "mediumWide" | "detail";
   priority?: boolean;
   width?: number;
   height?: number;
 }) {
+  const widthClass = {
+    medium: "md:w-[74%]",
+    mediumWide: "md:w-[82%]",
+    detail: "md:w-[85%]",
+  }[size];
+
   return (
-    <figure>
+    <figure className={`mx-auto w-full ${widthClass}`}>
       <div className="overflow-hidden rounded-2xl bg-white shadow-[0_16px_50px_rgba(24,35,54,.08)]">
         <Image
           src={src}
@@ -77,18 +85,19 @@ export function AvearCaseStudy() {
             </p>
           </Reveal>
 
-          <Reveal className="mt-10 pb-14 md:mt-14 md:pb-20" delay={0.06}>
+          <Reveal className="mt-10 pb-12 md:mt-12 md:pb-16" delay={0.06}>
             <Visual
               src={`${projectPath}/avear-kit.jpg`}
               alt="AVEAR left- and right-hand wearable concepts with replaceable odour capsules"
               caption="AVEAR combined a refillable sanitiser reservoir with a replaceable odour capsule in a hand-worn concept."
+              size="medium"
               priority
             />
           </Reveal>
         </div>
       </header>
 
-      <section className="border-t border-hairline py-16 md:py-24">
+      <section className="border-t border-hairline py-14 md:py-20">
         <div className="container-content">
           <SectionHeading eyebrow="01 — The problem" title="Interrupting an unconscious behaviour">
             <p>
@@ -99,7 +108,7 @@ export function AvearCaseStudy() {
             </p>
           </SectionHeading>
 
-          <Reveal className="mt-10 md:mt-14" delay={0.07}>
+          <Reveal className="mt-9 md:mt-12" delay={0.07}>
             <Visual
               src={`${projectPath}/concept-sketches.jpg`}
               alt="Early AVEAR sketches exploring a hand-worn form, odour capsule and sanitiser reservoir"
@@ -109,7 +118,7 @@ export function AvearCaseStudy() {
         </div>
       </section>
 
-      <section className="border-t border-hairline bg-tint py-16 md:py-24">
+      <section className="border-t border-hairline bg-tint py-14 md:py-20">
         <div className="container-content">
           <SectionHeading eyebrow="02 — The idea" title="Combining reminder and response">
             <p>
@@ -117,7 +126,7 @@ export function AvearCaseStudy() {
             </p>
           </SectionHeading>
 
-          <Reveal className="mt-10 md:mt-14" delay={0.07}>
+          <Reveal className="mt-9 md:mt-12" delay={0.07}>
             <div className="grid border-y border-hairline md:grid-cols-2">
               <div className="py-9 md:py-12 md:pr-12">
                 <p className="font-mono text-sm uppercase tracking-[.12em] text-accent">Reminder</p>
@@ -134,17 +143,18 @@ export function AvearCaseStudy() {
             </div>
           </Reveal>
 
-          <Reveal className="mt-10 md:mt-14" delay={0.07}>
+          <Reveal className="mt-9 md:mt-12" delay={0.07}>
             <Visual
               src={`${projectPath}/working-concept.jpg`}
               alt="AVEAR working-concept board showing the proposed sensory cue and sanitiser interaction"
               caption="The proposed interaction connected a sensory reminder, on-hand sanitiser and a form intended to leave everyday hand movement possible."
+              size="medium"
             />
           </Reveal>
         </div>
       </section>
 
-      <section className="border-t border-hairline py-16 md:py-24">
+      <section className="border-t border-hairline py-14 md:py-20">
         <div className="container-content">
           <SectionHeading eyebrow="03 — Finding the form" title="Finding a form that follows the hand">
             <p>
@@ -155,17 +165,18 @@ export function AvearCaseStudy() {
             </p>
           </SectionHeading>
 
-          <Reveal className="mt-10 md:mt-14" delay={0.07}>
+          <Reveal className="mt-9 md:mt-12" delay={0.07}>
             <Visual
               src={`${projectPath}/form-evolution.jpg`}
               alt="AVEAR form evolution through hand tracing and paper prototypes"
               caption="Hand tracing and paper prototypes helped translate the idea into a form that followed the hand."
+              size="detail"
             />
           </Reveal>
         </div>
       </section>
 
-      <section className="border-t border-hairline bg-tint py-16 md:py-24">
+      <section className="border-t border-hairline bg-tint py-14 md:py-20">
         <div className="container-content">
           <SectionHeading eyebrow="04 — Making it tangible" title="Making the idea tangible, quickly">
             <p>
@@ -173,15 +184,16 @@ export function AvearCaseStudy() {
             </p>
           </SectionHeading>
 
-          <Reveal className="mt-10 md:mt-14" delay={0.07}>
+          <Reveal className="mt-9 md:mt-12" delay={0.07}>
             <Visual
               src={`${projectPath}/quick-prototype.jpg`}
               alt="Improvised AVEAR prototype showing fit, reservoir position, dispensing and refilling"
               caption="The improvised prototype made fit, reservoir position, dispensing and refilling visible enough to examine physically."
+              size="detail"
             />
           </Reveal>
 
-          <Reveal className="mt-14 md:mt-20" delay={0.07}>
+          <Reveal className="mt-12 md:mt-16" delay={0.07}>
             <div className="grid gap-8 md:grid-cols-12 md:items-end">
               <h3 className="font-display text-[clamp(2rem,3.6vw,3.25rem)] leading-[1.05] tracking-[-.02em] text-ink md:col-span-7">
                 Exploring everyday use
@@ -192,11 +204,12 @@ export function AvearCaseStudy() {
             </div>
           </Reveal>
 
-          <Reveal className="mt-10 md:mt-14" delay={0.07}>
+          <Reveal className="mt-9 md:mt-12" delay={0.07}>
             <Visual
               src={`${projectPath}/everyday-use.jpg`}
               alt="AVEAR rough prototype demonstrated during everyday hand movements"
               caption="Everyday actions were used to communicate the intended relationship between the wearable and normal hand movement."
+              size="medium"
               width={3384}
               height={2214}
             />
@@ -204,7 +217,7 @@ export function AvearCaseStudy() {
         </div>
       </section>
 
-      <section className="border-t border-hairline py-16 md:py-24">
+      <section className="border-t border-hairline py-14 md:py-20">
         <div className="container-content">
           <SectionHeading eyebrow="05 — Resolving the concept" title="Resolving the product system">
             <p>
@@ -215,11 +228,12 @@ export function AvearCaseStudy() {
             </p>
           </SectionHeading>
 
-          <Reveal className="mt-10 md:mt-14" delay={0.07}>
+          <Reveal className="mt-9 md:mt-12" delay={0.07}>
             <Visual
               src={`${projectPath}/product-system.jpg`}
               alt="AVEAR proposed product components and materials"
               caption="The proposed product system defined the relationship between the reservoir, replaceable odour capsule, attachment bands and use instructions."
+              size="detail"
             />
           </Reveal>
         </div>

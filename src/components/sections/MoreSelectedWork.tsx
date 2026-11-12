@@ -19,7 +19,7 @@ const secondaryProjects = [
   },
   {
     href: "/work/avear",
-    title: "Avear — Designing a Wearable Response to an Emerging Behaviour",
+    title: "Avear — A Wearable Response to Face Touching",
     category: "Product Design · Physical Prototyping",
     image: "/projects/avear/avear-kit.jpg",
     alt: "AVEAR wearable sanitiser and odour-cue concept",
