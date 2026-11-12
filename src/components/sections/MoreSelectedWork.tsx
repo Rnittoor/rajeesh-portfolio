@@ -17,6 +17,13 @@ const secondaryProjects = [
     image: "/projects/calicut-beach/calicut-beach-context.jpg",
     alt: "Visitors, vendors and public activity along Calicut Beach",
   },
+  {
+    href: "/work/avear",
+    title: "Avear — Designing a Wearable Response to an Emerging Behaviour",
+    category: "Product Design · Physical Prototyping",
+    image: "/projects/avear/avear-kit.jpg",
+    alt: "AVEAR wearable sanitiser and odour-cue concept",
+  },
 ] as const;
 
 export function MoreSelectedWork() {

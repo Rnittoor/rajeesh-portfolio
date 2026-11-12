@@ -973,15 +973,16 @@ export const projects: Project[] = [
   {
     slug: "avear",
     index: "08",
-    title: "Avear — Wearable Sanitiser",
-    client: "Industrial design",
+    title: "Avear — Designing a Wearable Response",
+    client: "Global Grad Show open design challenge",
     year: "2020",
-    disciplines: ["Industrial Design", "Behaviour"],
-    hook: "We touch our faces 16 times an hour. What if clean hands came with us?",
+    disciplines: ["Product Design", "Physical Prototyping", "Form Exploration"],
+    hook: "A rapid wearable concept connecting a sensory reminder with immediately accessible hand sanitiser.",
     shortSummary:
-      "A wearable concept addressing indirect Covid-19 transmission by nudging hand hygiene around unconscious face-touching.",
+      "An individual concept developed for the 2020 Global Grad Show COVID-19 open design challenge, explored through sketching, form studies and a rough physical prototype.",
     featured: false,
     accent: "ink",
+    media: "/projects/avear/avear-kit.jpg",
   },
 ];
 

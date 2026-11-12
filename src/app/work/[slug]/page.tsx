@@ -6,6 +6,7 @@ import { IkeaDataVisualisationCaseStudy } from "@/components/case-study/IkeaData
 import { IkeaServiceCaseStudy } from "@/components/case-study/IkeaServiceCaseStudy";
 import { FifaTeamworkCaseStudy } from "@/components/case-study/FifaTeamworkCaseStudy";
 import { CalicutBeachCaseStudy } from "@/components/case-study/CalicutBeachCaseStudy";
+import { AvearCaseStudy } from "@/components/case-study/AvearCaseStudy";
 import { NextProjectNavigation } from "@/components/case-study/NextProjectNavigation";
 import { ProjectMetadata } from "@/components/case-study/ProjectMetadata";
 import { Reveal } from "@/components/ui/Reveal";
@@ -48,6 +49,8 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         <FifaTeamworkCaseStudy />
       ) : project.slug === "calicut-beach" ? (
         <CalicutBeachCaseStudy />
+      ) : project.slug === "avear" ? (
+        <AvearCaseStudy />
       ) : project.editorialPresentation ? (
         <EditorialCaseStudy project={project} presentation={project.editorialPresentation} />
       ) : (
@@ -70,7 +73,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
         </article>
       )}
 
-      {project.slug === "teamwork-value" || project.slug === "calicut-beach" ? null : relatedProjects.length > 0 ? (
+      {project.slug === "teamwork-value" || project.slug === "calicut-beach" || project.slug === "avear" ? null : relatedProjects.length > 0 ? (
         <NextProjectNavigation projects={relatedProjects} />
       ) : (
         <NextProjectNavigation projects={projects.filter((item) => item.slug !== project.slug).slice(0, 2)} />
