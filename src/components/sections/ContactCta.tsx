@@ -5,7 +5,7 @@ export function ContactCta() {
   return (
     <section
       id="contact"
-      className="relative overflow-hidden border-t border-hairline bg-tint py-28 md:py-40"
+      className="relative overflow-hidden border-t border-hairline bg-tint py-20 md:py-24"
     >
       <div
         aria-hidden
@@ -13,20 +13,20 @@ export function ContactCta() {
       />
       <div className="container-content relative text-center">
         <Reveal delay={0.05}>
-          <h2 className="mx-auto mt-8 max-w-4xl font-display text-ink [font-size:var(--text-display)] [line-height:1.02] [letter-spacing:var(--text-display--letter-spacing)]">
+          <h2 className="mx-auto max-w-4xl font-display text-[clamp(3rem,7vw,6rem)] leading-[1.02] tracking-[-.03em] text-ink md:text-h1 lg:text-[clamp(3rem,7vw,6rem)]">
             Have a complex problem?
             <br />
             <span className="italic text-accent">Let’s make it clear.</span>
           </h2>
         </Reveal>
         <Reveal delay={0.1}>
-          <p className="mx-auto mt-8 max-w-xl text-lead text-body">
+          <p className="mx-auto mt-6 max-w-xl text-lead text-body">
             I’m open to conversations about senior UX, Product and Service
             Design opportunities.
           </p>
         </Reveal>
         <Reveal delay={0.15}>
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
             <a
               href={`mailto:${site.email}`}
               className="group inline-flex items-center gap-2 rounded-full bg-accent px-7 py-3.5 text-canvas transition-colors hover:bg-accent-hover"

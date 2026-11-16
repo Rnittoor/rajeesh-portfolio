@@ -39,7 +39,7 @@ export const site = {
     highlights: [
       "7+ years in UX",
       "Architecture background",
-      "Relocating to London · working worldwide",
+      "Relocating to London",
     ],
   },
 } as const;

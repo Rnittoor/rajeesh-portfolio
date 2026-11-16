@@ -5,25 +5,21 @@ const capabilities = [
     id: "01",
     title: "UX & Product Design",
     body: "Interfaces, flows, and design systems — from research to high-fidelity, buildable UI.",
-    tags: ["Research", "IA", "UI", "Prototyping"],
   },
   {
     id: "02",
     title: "Service Design",
     body: "Mapping the whole experience — journeys, blueprints, and the touchpoints between people and systems.",
-    tags: ["Journeys", "Blueprints", "Touchpoints"],
   },
   {
     id: "03",
     title: "System Design",
     body: "Making sense of complex, interconnected problems through modelling, GIGA maps, and structure.",
-    tags: ["Systems mapping", "Modelling", "Strategy"],
   },
   {
     id: "04",
     title: "Information Viz & Motion",
     body: "Turning data and stories into visual, moving artefacts people understand at a glance.",
-    tags: ["Data viz", "Motion", "Storytelling"],
   },
 ];
 
@@ -38,7 +34,7 @@ export function Capabilities() {
           <div className="md:col-span-4">
             <Reveal>
               <p className="eyebrow">Capabilities</p>
-              <h2 className="mt-4 font-display text-h1 text-ink [line-height:var(--text-h1--line-height)] [letter-spacing:var(--text-h1--letter-spacing)]">
+              <h2 className="mt-4 font-display text-[clamp(2.125rem,3.8vw,3.75rem)] leading-[1.03] tracking-[-.025em] text-ink">
                 From systems
                 <br />
                 to screens.
@@ -59,20 +55,10 @@ export function Capabilities() {
                     <span className="font-mono text-base text-accent md:col-span-1">
                       {cap.id}
                     </span>
-                    <h3 className="font-display text-2xl text-ink transition-colors duration-300 group-hover:text-accent md:col-span-4 md:text-3xl">
+                    <h3 className="font-display text-2xl text-ink transition-colors duration-300 group-hover:text-accent md:col-span-4 md:text-[1.75rem]">
                       {cap.title}
                     </h3>
-                    <p className="text-body md:col-span-5">{cap.body}</p>
-                    <div className="flex flex-wrap gap-2 md:col-span-2 md:justify-end">
-                      {cap.tags.slice(0, 2).map((t) => (
-                        <span
-                          key={t}
-                          className="rounded-full bg-canvas px-2.5 py-1 text-base text-muted"
-                        >
-                          {t}
-                        </span>
-                      ))}
-                    </div>
+                    <p className="text-body md:col-span-7">{cap.body}</p>
                   </div>
                 </Reveal>
               ))}

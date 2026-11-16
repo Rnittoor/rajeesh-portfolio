@@ -61,7 +61,7 @@ export function WorkCard({
         <div className="absolute inset-0 bg-[#0b1a2e] p-4 sm:p-6 md:p-8">
           <div className="relative h-full overflow-hidden rounded-xl bg-[#102638] shadow-[0_18px_50px_rgba(0,0,0,.22)]">
             <Image
-              src="/projects/project-01-ikea-service-design.svg"
+              src="/projects/project-01-ikea-service-design-home.svg"
               alt="Abstract global marketing service map showing connected experience, interaction and backstage activity"
               fill
               sizes="(min-width: 768px) 58vw, 100vw"
@@ -77,7 +77,7 @@ export function WorkCard({
         <div className="absolute inset-0 bg-[#0b1a2e] p-4 sm:p-6 md:p-8">
           <div className="relative h-full overflow-hidden rounded-xl bg-[#102638] shadow-[0_18px_50px_rgba(0,0,0,.22)]">
             <Image
-              src="/projects/project-02-ikea-data-visualisation.svg"
+              src="/projects/project-02-ikea-data-visualisation-home.svg"
               alt="Animated visual encoding studies showing shape, colour, size, area, length and position"
               fill
               sizes="(min-width: 768px) 58vw, 100vw"
