@@ -25,9 +25,9 @@ export const site = {
     headline: "I turn complex systems into products people can use.",
     pills: [
       "UX & Product Design",
-      "7+ years",
       "Service Design",
       "Research → Product",
+      "7+ years in UX",
       "Relocating to London",
     ],
   },

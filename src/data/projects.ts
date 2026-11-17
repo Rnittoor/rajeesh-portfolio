@@ -405,7 +405,7 @@ export const projects: Project[] = [
     index: "03",
     title: "Unified Aircraft Management",
     client: "Airbus",
-    year: "2023",
+    year: "2022",
     disciplines: ["Strategic Product Design", "UX", "Systems Thinking", "Research"],
     hook: "Turning a fragmented aircraft-management journey into a unified product direction through research and systems thinking.",
     shortSummary:
@@ -913,7 +913,7 @@ export const projects: Project[] = [
         ],
       },
     ],
-    relatedProjects: ["loog-search-engine", "unicamp-pos"],
+    relatedProjects: ["ikea-global-marketing-service-design", "ikea-data-visualisation-system"],
   },
   {
     slug: "loog-search-engine",
@@ -997,6 +997,23 @@ export const upcomingProjects = [
 
 export const featuredProjects = projects.filter((p) => p.featured);
 
+export const publicProjectSlugs = [
+  "airbus-aircraft-management",
+  "ikea-global-marketing-service-design",
+  "ikea-data-visualisation-system",
+  "teamwork-value",
+  "calicut-beach",
+  "avear",
+] as const;
+
+export const publicProjects = publicProjectSlugs
+  .map((slug) => projects.find((project) => project.slug === slug))
+  .filter((project): project is Project => project !== undefined);
+
 export function getProjectBySlug(slug: string) {
   return projects.find((project) => project.slug === slug);
+}
+
+export function getPublicProjectBySlug(slug: string) {
+  return publicProjects.find((project) => project.slug === slug);
 }

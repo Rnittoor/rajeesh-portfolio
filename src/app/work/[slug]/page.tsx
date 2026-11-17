@@ -10,33 +10,44 @@ import { AvearCaseStudy } from "@/components/case-study/AvearCaseStudy";
 import { NextProjectNavigation } from "@/components/case-study/NextProjectNavigation";
 import { ProjectMetadata } from "@/components/case-study/ProjectMetadata";
 import { Reveal } from "@/components/ui/Reveal";
-import { getProjectBySlug, projects } from "@/data/projects";
+import { getPublicProjectBySlug, publicProjects } from "@/data/projects";
 
 type ProjectPageProps = {
   params: Promise<{ slug: string }>;
 };
 
+export const dynamicParams = false;
+
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return publicProjects.map((project) => ({ slug: project.slug }));
 }
 
 export async function generateMetadata({ params }: ProjectPageProps): Promise<Metadata> {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = getPublicProjectBySlug(slug);
   if (!project) return {};
   return {
     title: project.title,
     description: project.shortSummary,
+    alternates: {
+      canonical: `/work/${project.slug}`,
+    },
+    openGraph: {
+      title: `${project.title} — Rajeesh Nittoor`,
+      description: project.shortSummary,
+      type: "article",
+      url: `/work/${project.slug}`,
+    },
   };
 }
 
 export default async function ProjectPage({ params }: ProjectPageProps) {
   const { slug } = await params;
-  const project = getProjectBySlug(slug);
+  const project = getPublicProjectBySlug(slug);
   if (!project) notFound();
 
   const relatedProjects = (project.relatedProjects ?? [])
-    .map(getProjectBySlug)
+    .map(getPublicProjectBySlug)
     .filter((related) => related !== undefined);
 
   return (
@@ -76,7 +87,7 @@ export default async function ProjectPage({ params }: ProjectPageProps) {
       {project.slug === "teamwork-value" || project.slug === "calicut-beach" || project.slug === "avear" ? null : relatedProjects.length > 0 ? (
         <NextProjectNavigation projects={relatedProjects} />
       ) : (
-        <NextProjectNavigation projects={projects.filter((item) => item.slug !== project.slug).slice(0, 2)} />
+        <NextProjectNavigation projects={publicProjects.filter((item) => item.slug !== project.slug).slice(0, 2)} />
       )}
     </>
   );

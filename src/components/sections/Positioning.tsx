@@ -18,20 +18,6 @@ export function Positioning() {
                 {site.bio.body}
               </p>
             </Reveal>
-
-            <Reveal delay={0.15}>
-              <ul className="mt-12 flex flex-wrap gap-x-10 gap-y-4 border-t border-hairline pt-8">
-                {site.bio.highlights.map((h) => (
-                  <li
-                    key={h}
-                    className="flex items-center gap-2 text-base text-body"
-                  >
-                    <span className="h-1.5 w-1.5 rounded-full bg-accent" />
-                    {h}
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
           </div>
         </div>
       </div>

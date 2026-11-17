@@ -24,6 +24,9 @@ const fraunces = Fraunces({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.rajeeshnittoor.nl"),
+  alternates: {
+    canonical: "https://www.rajeeshnittoor.nl/",
+  },
   title: {
     default: "Rajeesh Nittoor — Senior UX & Product Designer",
     template: "%s — Rajeesh Nittoor",
@@ -35,6 +38,7 @@ export const metadata: Metadata = {
     description:
       "Rajeesh Nittoor is a Senior UX & Product Designer relocating to London, working across product, service and systems design.",
     type: "website",
+    url: "https://www.rajeeshnittoor.nl/",
     locale: "en_GB",
   },
 };

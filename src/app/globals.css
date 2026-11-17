@@ -153,8 +153,8 @@ body {
   }
 }
 
-/* Slow marquee for the credibility strip */
-@keyframes marquee {
+/* Quiet, continuous client-name band in the credibility section. */
+@keyframes client-marquee {
   from {
     transform: translateX(0);
   }
@@ -163,10 +163,7 @@ body {
   }
 }
 
-.marquee-track {
-  animation: marquee 32s linear infinite;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
+.client-marquee-track {
+  animation: client-marquee 52s linear infinite;
+  will-change: transform;
 }

@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import { Reveal } from "@/components/ui/Reveal";
 import { WorkCard } from "@/components/ui/WorkCard";
-import { projects } from "@/data/projects";
+import { publicProjects } from "@/data/projects";
+
+const description = "Selected UX, product, service and systems design work by Rajeesh Nittoor.";
 
 export const metadata: Metadata = {
   title: "Selected work",
-  description: "UX, product, service, system, and information design work by Nittoor Freelance Studio.",
+  description,
+  alternates: {
+    canonical: "/work",
+  },
+  openGraph: {
+    title: "Selected work — Rajeesh Nittoor",
+    description,
+    type: "website",
+    url: "/work",
+  },
 };
 
 export default function WorkPage() {
@@ -23,7 +34,7 @@ export default function WorkPage() {
         </Reveal>
 
         <div className="mt-20 flex flex-col gap-24 md:mt-28 md:gap-36">
-          {projects.map((project, index) => (
+          {publicProjects.map((project, index) => (
             <WorkCard key={project.slug} project={project} reversed={index % 2 === 1} />
           ))}
         </div>
